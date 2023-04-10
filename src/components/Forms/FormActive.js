@@ -1,8 +1,8 @@
-function FormActive() {
+function FormActive({ noteTitleChange, inputNoteChange }) {
   return (
     <form className="form-container active-form" id="form-container-actions">
-      <input id="note-title" className="note-title" type="text" placeholder="Title" />
-      <input id="input-note" className="input-note" type="text" placeholder="Take a note..." />
+      <input id="note-title" className="note-title" type="text" placeholder="Title" onChange={noteTitleChange} />
+      <input id="input-note" className="input-note" type="text" placeholder="Take a note..." onChange={inputNoteChange} />
       <div className="form-actions">
         <div className="icons">
           <div className="tooltip">

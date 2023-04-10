@@ -4,8 +4,10 @@ import { useState } from "react";
 import FormInactive from "./FormInactive";
 import FormActive from "./FormActive";
 
-export default function Forms() {
+export default function Forms({ noteTitleChange, inputNoteChange }) {
   const [openActiveForm, setopenActiveForm] = useState(false);
   const handleInputClick = () => setopenActiveForm(true);
-  return <>{openActiveForm ? <FormActive /> : <FormInactive inputClick={handleInputClick} />}</>;
+  return (
+    <>{openActiveForm ? <FormActive noteTitleChange={noteTitleChange} inputNoteChange={inputNoteChange} /> : <FormInactive inputClick={handleInputClick} />}</>
+  );
 }

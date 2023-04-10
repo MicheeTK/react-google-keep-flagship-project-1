@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.css";
 import Navbar from "../Navbar/Navbar";
 import Sidebar from "../Sidebar/Sidebar";
@@ -7,11 +8,13 @@ import Forms from "../Forms/Forms";
 import { uniqueID } from "../uniqueID/uniqueID";
 
 function App() {
-  const notes = [
-    { id: uniqueID(), title: "My Title 1", text: "Content 1" },
-    { id: uniqueID(), title: "My Title 2", text: "Content 2" },
-    { id: uniqueID(), title: "My Title 3", text: "Content 3" },
-  ];
+  const [noteTitleValue, setNoteTitleValue] = useState("");
+  const [inputNoteValue, setinputNoteValue] = useState("");
+
+  const handleNoteTitle = (event) => setNoteTitleValue(event.target.value);
+  const handleInputNote = (event) => setinputNoteValue(event.target.value);
+
+  const notes = [{ id: uniqueID(), title: noteTitleValue, text: inputNoteValue }];
 
   return (
     <div className="App wrapper-container">
@@ -21,7 +24,7 @@ function App() {
       </div>
 
       <main className="main-container">
-        <Forms />
+        <Forms noteTitleChange={handleNoteTitle} inputNoteChange={handleInputNote} />
         <Modal />
         <Notes notes={notes} />
       </main>
