@@ -1,10 +1,10 @@
 import "./Notes.css";
 import CreateNote from "../CreateNote/CreateNote";
 
-function Notes() {
+function Notes(props) {
   return (
     <div className="notes">
-      <CreateNote />
+      <CreateNote props={props} />
     </div>
   );
 }

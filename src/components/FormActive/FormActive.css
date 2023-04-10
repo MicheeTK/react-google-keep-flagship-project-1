@@ -1,6 +1,6 @@
 .active-form,
 .modal-active-form {
-  display: none;
+  /* display: none; */
   flex-direction: column;
   align-items: center;
   padding-right: 15px;
