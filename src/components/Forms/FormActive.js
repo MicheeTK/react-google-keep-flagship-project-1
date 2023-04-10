@@ -1,6 +1,3 @@
-import "./FormActive.css";
-import "../Modal/Modal.css";
-
 function FormActive() {
   return (
     <form className="form-container active-form" id="form-container-actions">

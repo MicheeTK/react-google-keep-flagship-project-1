@@ -1,7 +1,7 @@
-function FormInactive() {
+function FormInactive(props) {
   return (
     <form className="form-container inactive-form">
-      <input className="input-note" type="text" placeholder="Take a note..." />
+      <input className="input-note" type="text" placeholder="Take a note..." onClick={props.inputClick} />
       <div className="form-actions">
         <div className="tooltip">
           <i className="material-icons hover">check_box</i>

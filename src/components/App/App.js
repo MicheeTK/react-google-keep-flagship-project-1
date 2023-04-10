@@ -1,10 +1,9 @@
 import "./App.css";
 import Navbar from "../Navbar/Navbar";
 import Sidebar from "../Sidebar/Sidebar";
-import FormInactive from "../FormInactive/FormInactive";
-import FormActive from "../FormActive/FormActive";
 import Modal from "../Modal/Modal";
 import Notes from "../Notes/Notes";
+import Forms from "../Forms/Forms";
 import { uniqueID } from "../uniqueID/uniqueID";
 
 function App() {
@@ -22,8 +21,7 @@ function App() {
       </div>
 
       <main className="main-container">
-        <FormInactive />
-        <FormActive />
+        <Forms />
         <Modal />
         <Notes notes={notes} />
       </main>

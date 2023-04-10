@@ -1,4 +1,4 @@
-import "../FormActive/FormActive.css";
+import "../Forms/Forms.css";
 import "./Modal.css";
 
 function Modal() {
