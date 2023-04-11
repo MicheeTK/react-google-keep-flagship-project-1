@@ -1,8 +1,14 @@
-function FormActive({ noteTitleChange, inputNoteChange }) {
+function FormActive(props) {
+  const noteTitleChange = props.noteTitleChange;
+  const inputNoteChange = props.inputNoteChange;
+  const submitActiveForm = props.submitActiveForm;
+  const noteTitleValue = props.noteTitleValue;
+  const inputNoteValue = props.inputNoteValue;
+
   return (
-    <form className="form-container active-form" id="form-container-actions">
-      <input id="note-title" className="note-title" type="text" placeholder="Title" onChange={noteTitleChange} />
-      <input id="input-note" className="input-note" type="text" placeholder="Take a note..." onChange={inputNoteChange} />
+    <form className="form-container active-form" id="form-container-actions" onSubmit={submitActiveForm}>
+      <input id="note-title" className="note-title" type="text" placeholder="Title" onChange={noteTitleChange} value={noteTitleValue} />
+      <input id="input-note" className="input-note" type="text" placeholder="Take a note..." onChange={inputNoteChange} value={inputNoteValue} />
       <div className="form-actions">
         <div className="icons">
           <div className="tooltip">

@@ -10,6 +10,11 @@ import { uniqueID } from "../uniqueID/uniqueID";
 function App() {
   const [noteTitleValue, setNoteTitleValue] = useState("");
   const [inputNoteValue, setinputNoteValue] = useState("");
+  const handleActiveFormSubmit = (event) => {
+    event.preventDefault();
+    setNoteTitleValue("");
+    setinputNoteValue("");
+  };
 
   const handleNoteTitle = (event) => setNoteTitleValue(event.target.value);
   const handleInputNote = (event) => setinputNoteValue(event.target.value);
@@ -24,7 +29,13 @@ function App() {
       </div>
 
       <main className="main-container">
-        <Forms noteTitleChange={handleNoteTitle} inputNoteChange={handleInputNote} />
+        <Forms
+          noteTitleChange={handleNoteTitle}
+          inputNoteChange={handleInputNote}
+          submitActiveForm={handleActiveFormSubmit}
+          noteTitleValue={noteTitleValue}
+          inputNoteValue={inputNoteValue}
+        />
         <Modal />
         <Notes notes={notes} />
       </main>
