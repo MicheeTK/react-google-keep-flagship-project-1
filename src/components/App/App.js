@@ -10,16 +10,22 @@ import { uniqueID } from "../uniqueID/uniqueID";
 function App() {
   const [noteTitleValue, setNoteTitleValue] = useState("");
   const [inputNoteValue, setinputNoteValue] = useState("");
+  const [notes, setNotes] = useState([]);
+  const [openActiveForm, setopenActiveForm] = useState(false);
+
+  const newNote = { id: uniqueID(), title: noteTitleValue, text: inputNoteValue };
+
   const handleActiveFormSubmit = (event) => {
     event.preventDefault();
+    setNotes([...notes, newNote]);
     setNoteTitleValue("");
     setinputNoteValue("");
+    setopenActiveForm(false);
   };
 
   const handleNoteTitle = (event) => setNoteTitleValue(event.target.value);
   const handleInputNote = (event) => setinputNoteValue(event.target.value);
-
-  const notes = [{ id: uniqueID(), title: noteTitleValue, text: inputNoteValue }];
+  const handleInputClick = () => setopenActiveForm(true);
 
   return (
     <div className="App wrapper-container">
@@ -35,6 +41,8 @@ function App() {
           submitActiveForm={handleActiveFormSubmit}
           noteTitleValue={noteTitleValue}
           inputNoteValue={inputNoteValue}
+          openActiveForm={openActiveForm}
+          handleInputClick={handleInputClick}
         />
         <Modal />
         <Notes notes={notes} />

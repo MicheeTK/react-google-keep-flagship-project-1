@@ -1,7 +1,6 @@
 import "../Notes/Notes.css";
 
-function createNote({ props }) {
-  // console.log("props", props.props.notes);
+function DisplayNote({ props }) {
   return props.notes.map((note) => (
     <div className="create-note" id={note.id} key={note.id}>
       <span className="material-icons check-circle"> check_circle </span>
@@ -38,4 +37,4 @@ function createNote({ props }) {
     </div>
   ));
 }
-export default createNote;
+export default DisplayNote;

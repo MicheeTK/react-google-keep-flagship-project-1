@@ -1,6 +1,6 @@
 import "./Forms.css";
 import "../Modal/Modal.css";
-import { useState } from "react";
+// import { useState } from "react";
 import FormInactive from "./FormInactive";
 import FormActive from "./FormActive";
 
@@ -10,9 +10,8 @@ export default function Forms(props) {
   const submitActiveForm = props.submitActiveForm;
   const noteTitleValue = props.noteTitleValue;
   const inputNoteValue = props.inputNoteValue;
-
-  const [openActiveForm, setopenActiveForm] = useState(false);
-  const handleInputClick = () => setopenActiveForm(true);
+  const openActiveForm = props.openActiveForm;
+  const handleInputClick = props.handleInputClick;
   return (
     <>
       {openActiveForm ? (

@@ -4,7 +4,6 @@ function FormActive(props) {
   const submitActiveForm = props.submitActiveForm;
   const noteTitleValue = props.noteTitleValue;
   const inputNoteValue = props.inputNoteValue;
-
   return (
     <form className="form-container active-form" id="form-container-actions" onSubmit={submitActiveForm}>
       <input id="note-title" className="note-title" type="text" placeholder="Title" onChange={noteTitleChange} value={noteTitleValue} />
